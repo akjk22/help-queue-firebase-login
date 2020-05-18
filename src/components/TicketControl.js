@@ -19,25 +19,25 @@ class TicketControl extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.waitTimeUpdateTimer = setInterval(() =>
-      this.updateTicketElapsedWaitTime(),
-    60000
-    );
-  }
+  // componentDidMount() {
+  //   this.waitTimeUpdateTimer = setInterval(() =>
+  //     this.updateTicketElapsedWaitTime(),
+  //   60000
+  //   );
+  // }
 
-  componentWillUnmount(){
-    clearInterval(this.waitTimeUpdateTimer);
-  }
+  // componentWillUnmount(){
+  //   clearInterval(this.waitTimeUpdateTimer);
+  // }
 
-  updateTicketElapsedWaitTime = () => {
-    const { dispatch } = this.props;
-    Object.values(this.props.masterTicketList).forEach(ticket => {
-      const newFormattedWaitTime = ticket.timeOpen.fromNow(true);
-      const action = a.updateTime(ticket.id, newFormattedWaitTime);
-      dispatch(action);
-    });
-  }
+  // updateTicketElapsedWaitTime = () => {
+  //   const { dispatch } = this.props;
+  //   Object.values(this.props.masterTicketList).forEach(ticket => {
+  //     const newFormattedWaitTime = ticket.timeOpen.fromNow(true);
+  //     const action = a.updateTime(ticket.id, newFormattedWaitTime);
+  //     dispatch(action);
+  //   });
+  // }
 
   handleClick = () => {
     if (this.state.selectedTicket != null) {
@@ -117,13 +117,12 @@ class TicketControl extends React.Component {
 
 }
 
-TicketControl.propTypes = {
-  masterTicketList: PropTypes.object
-};
+// TicketControl.propTypes = {
+//   masterTicketList: PropTypes.object
+// };
 
 const mapStateToProps = state => {
   return {
-    // masterTicketList: state.masterTicketList,
     formVisibleOnPage: state.formVisibleOnPage
   }
 }
