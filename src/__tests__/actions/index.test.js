@@ -13,7 +13,7 @@ describe('help queue actions', () => {
   //     formattedWaitTime: "A few seconds",
   //     id: 1
   //   });
-  });
+  // });
 
   it('deleteTicket should create DELETE_TICKET action', () => {
     expect(actions.deleteTicket(1)).toEqual({
